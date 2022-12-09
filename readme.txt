@@ -1,5 +1,11 @@
 Hi,
 
+************************* IMPORTANT ************************
+
+BEFORE RUNNING THE APPLICATION INSTALL COMPOSER AND "vlucas/phpdotenv"
+
+*********************************************************************
+
 Created this project using HTML, SCSS, JAVASCRIPT, PHP.
 
 I know react.js as well but I didn,t wanted to complicate the project further,
