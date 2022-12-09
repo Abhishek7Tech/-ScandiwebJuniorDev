@@ -1,0 +1,57 @@
+$primary-color:#F5FFFA;
+$heading-color: orangered;
+$button-color:tomato;
+$button-color-text:white;
+$button-hover:crimson;
+$border-color:#399292;
+// $card-color:#05e273;
+$card-color:#fd4d36;
+
+$Text-big: 2rem;
+$Text-med:1.1rem;
+$Text-small:0.5rem;
+$button-width: 5rem;
+$button-height:2rem;
+$input-width:10rem;
+$input-height:2rem;
+
+$Heading: SourceSansPro-Bold,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$Text-Heading:SourceSansPro-Regular, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$Para-Heading:SourceSansPro-Light,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+@mixin  buttons {
+    height: $button-height;
+    border: none;
+    text-align: center;
+    width: $button-width;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px tomato;
+    cursor: pointer;
+}
+
+@mixin  buttonAnim {
+    background-color: $button-hover;
+    transition: 1s;
+    opacity: 0.8;
+    
+}
+
+@mixin  input {
+    text-align: center;
+    margin-top: 1rem; 
+    height: $input-height; 
+    width: $input-width;
+    border-radius: 5px;
+    border-color:$border-color;
+    font-size: $Text-med;
+   
+}
+
+@mixin  label {
+    font-family: $Text-Heading;
+    padding: 1rem;
+   margin-top: 1rem; 
+   font-size: $Text-med;
+   color: white;
+}
