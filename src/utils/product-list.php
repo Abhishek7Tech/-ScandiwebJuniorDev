@@ -37,7 +37,7 @@ use features\Feature;
         <?php
 
         require_once __DIR__ . '../../../db/sql.php';
-        require_once __DIR__ . './productFeatures.php';
+        require_once __DIR__ . '../../class/features/productFeatures.php';
 
 
         $createDatabase = new Database();
@@ -62,9 +62,9 @@ use features\Feature;
             array_push($skuArray, $sku);
 
             // $properties = featureDetails($product);
-            $properties = $feature->featureDetails($product);
-            $keys = $feature->featureName($properties);
-            $values = $feature->featureValues($properties);
+            $properties = $feature->getFeatureDetails($product);
+            $keys = $feature->getFeatureName($properties);
+            $values = $feature->getFeatureValues($properties);
 
             echo  '<div class="product-card" id =" ' . $sku . ' ">
             <div class="check">

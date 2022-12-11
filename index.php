@@ -12,11 +12,12 @@ use validate\FurnitureValidation;
 
 use function PHPSTORM_META\type;
 
-require './src/validators/validate.php';
-require './src/validators//validateDVD.php';
-require './src/validators//validateFurniture.php';
-require './src/validators//validateBooks.php';
+require './src/class/validators/validate.php';
+require './src/class/validators//validateDVD.php';
+require './src/class/validators//validateFurniture.php';
+require './src/class/validators//validateBooks.php';
 require_once './db/sql.php';
+
 
 
 // when user hits add in the add products all values are recived here//
@@ -24,7 +25,6 @@ if (isset($_POST["submitbutton"])) {
     $formInputs = new Validation(
         $_POST
     );
-
 
     // var_dump($formInputs->getInput());
 

@@ -49,7 +49,6 @@ massDel.addEventListener("click", (event) => {
   }).then((response) => response.text().then((id) => id));
 
   const newCookies = cookieArray.join(" ");
-  console.log("New", newCookies);
   document.cookie = `sku=${newCookies}`;
    ids.splice(0, ids.length);
    

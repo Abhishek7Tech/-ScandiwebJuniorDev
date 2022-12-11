@@ -4,8 +4,25 @@ namespace features;
 
 class Feature
 {
+
+    public function getFeatureDetails($array)
+    {
+        return $this->featureDetails($array);
+    }
+
+    public function getFeatureName($array)
+    {
+        return $this->featureName($array);
+    }
+
+
+    public function getFeatureValues($array)
+    {
+        return $this->featureValues($array);
+    }
+
     //  1.) filters array to get height widtth lenght weight etc..//
-    public function featureDetails($array)
+    protected function featureDetails($array)
     {
         $features = array_filter($array, fn ($key) => $key !== 'sku' && $key !== 'name' && $key !== 'price', ARRAY_FILTER_USE_KEY);
         return $features;
@@ -13,7 +30,7 @@ class Feature
 
     // 2.) sets keys name to dimensions when property is furniture //
 
-    public function featureName($array)
+    protected function featureName($array)
     {
         $property = array_keys($array);
         $keys = implode(" ", $property);
@@ -23,7 +40,7 @@ class Feature
 
     // 3. adds MB KG OR X to values according to size , weight and dimensions//
 
-    public function featureValues($array)
+    protected function featureValues($array)
     {
         $values = array_values($array);
         $keys = $this->featureName($array);
