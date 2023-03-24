@@ -174,8 +174,8 @@ class Database
 
 
 
-            $sql->execute();
             $sql->bind_result($sku, $name, $price, $size, $height, $length, $width, $weight);
+            $sql->execute();
             $result = $sql->get_result();
             $products = $result->fetch_all(MYSQLI_ASSOC);
             $sql->close();
