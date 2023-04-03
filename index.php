@@ -1,6 +1,7 @@
 <?php
 
 namespace database;
+
 namespace  validate;
 
 ob_start();
@@ -10,7 +11,6 @@ use validate\Validation;
 use validate\DvdValidation;
 use validate\FurnitureValidation;
 
-use function PHPSTORM_META\type;
 
 require './src/class/validators/validate.php';
 require './src/class/validators//validateDVD.php';
@@ -53,14 +53,13 @@ if (isset($_POST["submitbutton"])) {
     // Shows alert based on sku sent by server. A little bit slow!//
     $skuExsist = $createDatabase->getSKU();
 
-    if ($skuExsist !== null) {
+    if ($skuExsist === null) {
         // echo "<script>
         // console.log('Haya');
         // window.location.replace('./add-product.php');
         // alert('SKU already exsist. Try something Unique 👍👍');
         // console.log('Caught you copy');
         // </script>";
-    } else {
         $createDatabase->insertData();
         header("Location: index.php");
     }
