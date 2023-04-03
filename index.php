@@ -1,7 +1,6 @@
 <?php
 
 namespace database;
-
 namespace  validate;
 
 ob_start();
