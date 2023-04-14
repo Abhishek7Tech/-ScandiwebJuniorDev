@@ -10,7 +10,6 @@ use validate\Validation;
 use validate\DvdValidation;
 use validate\FurnitureValidation;
 
-use function PHPSTORM_META\type;
 
 require './src/class/validators/validate.php';
 require './src/class/validators//validateDVD.php';
@@ -26,25 +25,7 @@ if (isset($_REQUEST["submitbutton"])) {
         $_POST
     );
 
-    // var_dump($formInputs->productType());
 
-    // var_dump($_POST);
-
-    // if ($_POST['SWITCHER'] === 'dvd') {
-    //     $formInputs = new DvdValidation($_POST);
-    //     $formInputs->check();
-    // }
-
-    // if ($_POST['SWITCHER'] === 'furniture') {
-    //     $formInputs = new FurnitureValidation($_POST);
-    //     $formInputs->check();
-    // }
-
-
-    // if ($_POST['SWITCHER'] === 'book') {
-    //     $formInputs = new BookValidation($_POST);
-    //     $formInputs->check();
-    // }
     $formInputs->check();
 
     $dvdInput = new DvdValidation($_POST);
