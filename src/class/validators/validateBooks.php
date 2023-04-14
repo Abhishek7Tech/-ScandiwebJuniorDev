@@ -7,13 +7,19 @@ class BookValidation extends Validation
     public $weight;
     public function __construct($input)
     {
-        $this->sku = $input['sku'];
-        $this->name = $input['name'];
-        $this->price = $input['price'];
-        $this->weight = $input['weight'];
+        if (array_key_exists('weight', $input)) {
+            $this->sku = $input['sku'];
+            $this->name = $input['name'];
+            $this->price = $input['price'];
+            $this->weight = $input['weight'];
+        }
     }
     public function check()
     {
-        $this->testInput($this->weight);
+        if ($this->weight) {
+            $this->testInput($this->weight);
+            echo "CHECKING Books";
+
+        }
     }
 }

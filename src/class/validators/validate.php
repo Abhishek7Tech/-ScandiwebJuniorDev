@@ -37,9 +37,10 @@ class Validation extends Product
 
     public function check()
     {
-
-        $this->testInput($this->sku);
-        $this->testInput($this->name);
-        $this->testInput($this->price);
+        if ($this->sku && $this->name && $this->price) {
+            $this->testInput($this->sku);
+            $this->testInput($this->name);
+            $this->testInput($this->price);
+        }
     }
 }

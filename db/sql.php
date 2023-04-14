@@ -55,7 +55,13 @@ class Database
     public function setData($data)
     {
         $defaultData = ["sku" => "0", "name" => "0", "price" => "0", "size" => "0", "height" => "0", "width" => "0", "length" => "0", "weight" => "0"];
+        // echo "<br>DATA BEFORe<br>";
+        // echo "<br>";
+        // var_dump($data);
+
         $this->data = array_replace($defaultData, $data);
+        // echo "<br>DATA AFTER<br>";
+        // var_dump($this->data);
     }
 
     // INSERT DATA
@@ -133,8 +139,8 @@ class Database
         $value =  array_values($this->data);
         $placeholderValue = implode(" , ", $placeholder);
         $itemTypeValue = implode("", $itemType);
-
-
+        // echo "VALUES <br>";
+        // var_dump($value);
         try {
             $connection = $this->setConnection();
             $sql = $connection->prepare("INSERT INTO products (`$key`) VALUES ($placeholderValue)");
